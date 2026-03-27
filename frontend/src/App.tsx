@@ -39,6 +39,26 @@ function App() {
     }
   }
 
+  const resetCounter = async () => {
+    setIsLoading(true)
+    setError(null)
+    try {
+      const response = await fetch(`${apiBaseUrl}/counter/reset`, {
+        method: 'POST',
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to reset counter')
+      }
+
+      await loadCounter()
+    } catch {
+      setError('Unable to reset counter')
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   useEffect(() => {
     loadCounter().catch(() => setError('Unable to load counter'))
   }, [])
@@ -51,6 +71,9 @@ function App() {
       </p>
       <button className="increment-button" onClick={incrementCounter} disabled={isLoading}>
         {isLoading ? 'Incrementing...' : 'Increment'}
+      </button>
+      <button className="increment-button" onClick={resetCounter} disabled={isLoading}>
+        {isLoading ? 'Resetting...' : 'Reset'}
       </button>
       {error && <p className="error-message">{error}</p>}
       <p className="hint">API base URL: {apiBaseUrl}</p>
