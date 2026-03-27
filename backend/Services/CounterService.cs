@@ -21,6 +21,15 @@ public sealed class CounterService(AppDbContext dbContext)
         return state.Value;
     }
 
+    public async Task<int> ResetAsync(CancellationToken cancellationToken)
+    {
+        var state = await GetCounterStateAsync(cancellationToken);
+        state.Value = 0;
+        state.UpdatedAt = DateTime.UtcNow;
+        await dbContext.SaveChangesAsync(cancellationToken);
+        return state.Value;
+    }
+
     public static async Task EnsureSeedAsync(AppDbContext dbContext)
     {
         var state = await dbContext.CounterStates.FirstOrDefaultAsync(x => x.Id == 1);

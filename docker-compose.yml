@@ -21,19 +21,19 @@ services:
     depends_on:
       - postgres
     ports:
-      - "8080:8080"
+      - "4002:4002"
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        VITE_API_BASE_URL: http://localhost:8080
+        VITE_API_BASE_URL: http://localhost:4002
     container_name: counter-frontend
     depends_on:
       - backend
     ports:
-      - "80:80"
+      - "4001:4001"
 
 volumes:
   postgres_data:

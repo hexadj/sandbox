@@ -57,8 +57,8 @@ Depuis la racine:
 - `docker compose up --build`
 
 Services exposes:
-- frontend: `http://localhost:80`
-- backend: `http://localhost:8080`
+- frontend: `http://localhost:4001`
+- backend: `http://localhost:4002`
 - postgres: `localhost:5432`
 
 ## Endpoints
@@ -82,7 +82,7 @@ Services exposes:
 - `branch`: `main`
 - `dockerfilePath`: `backend/Dockerfile`
 - `contextPath`: `backend`
-- `targetPort`: `8080`
+- `targetPort`: `4002`
 - `databaseEnabled`: `true`
 - `databaseEnvVarName`: `ConnectionStrings__Default`
 
@@ -91,7 +91,7 @@ Services exposes:
 - `branch`: `main`
 - `dockerfilePath`: `frontend/Dockerfile`
 - `contextPath`: `frontend`
-- `targetPort`: `80`
+- `targetPort`: `4001`
 - `databaseEnabled`: `false`
 - `databaseEnvVarName`: *(vide)*
 
