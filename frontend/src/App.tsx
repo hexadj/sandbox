@@ -69,12 +69,14 @@ function App() {
       <p className="counter-value">
         Current value: <strong>{count ?? '...'}</strong>
       </p>
-      <button className="increment-button" onClick={incrementCounter} disabled={isLoading}>
-        {isLoading ? 'Incrementing...' : 'Increment'}
-      </button>
-      <button className="increment-button" onClick={resetCounter} disabled={isLoading}>
-        {isLoading ? 'Resetting...' : 'Reset'}
-      </button>
+      <div className="actions">
+        <button className="increment-button" onClick={incrementCounter} disabled={isLoading}>
+          {isLoading ? 'Incrementing...' : 'Increment'}
+        </button>
+        <button className="increment-button" onClick={resetCounter} disabled={isLoading}>
+          {isLoading ? 'Resetting...' : 'Reset'}
+        </button>
+      </div>
       {error && <p className="error-message">{error}</p>}
       <p className="hint">API base URL: {apiBaseUrl}</p>
     </main>
