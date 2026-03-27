@@ -1,0 +1,41 @@
+.container {
+  max-width: 420px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.counter-value {
+  font-size: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.increment-button {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.65rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.increment-button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc2626;
+  margin-top: 1rem;
+}
+
+.hint {
+  margin-top: 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}

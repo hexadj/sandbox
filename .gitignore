@@ -1,0 +1,41 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# logs
+*.log
+logs/
+
+# env files
+.env
+.env.*
+!.env.example
+
+# frontend (node/vite)
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/coverage/
+frontend/.vite/
+frontend/*.tsbuildinfo
+
+# backend (.NET)
+backend/bin/
+backend/obj/
+backend/out/
+backend/TestResults/
+backend/coverage/
+backend/*.coverage
+backend/*.coveragexml
+backend/.vs/
+backend/**/*.user
+backend/**/*.suo
+backend/**/*.userosscache
+backend/**/*.sln.docstates
